@@ -1,6 +1,6 @@
 package com.tuguang.template.common;
 
-import com.tuguang.apicommon.constant.CommonConstant;
+import com.tuguang.template.constant.CommonConstant;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

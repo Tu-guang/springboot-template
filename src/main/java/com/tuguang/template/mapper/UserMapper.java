@@ -1,7 +1,7 @@
 package com.tuguang.template.mapper;
 
-import com.tuguang.template.model.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.tuguang.template.model.entity.User;
 
 /**
 * @author chen

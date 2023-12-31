@@ -2,10 +2,9 @@ package com.tuguang.template.aop;
 
 import com.google.gson.Gson;
 import com.tuguang.template.common.ErrorCode;
-import com.tuguang.template.model.vo.LoginUserVO;
-import com.tuguang.template.service.UserService;
 import com.tuguang.template.common.ResultUtils;
 import com.tuguang.template.model.entity.User;
+import com.tuguang.template.service.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;

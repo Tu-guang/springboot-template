@@ -3,9 +3,9 @@ package com.tuguang.template.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tuguang.template.model.dto.user.UserQueryRequest;
+import com.tuguang.template.model.entity.User;
 import com.tuguang.template.model.vo.LoginUserVO;
 import com.tuguang.template.model.vo.UserVO;
-import com.tuguang.template.model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

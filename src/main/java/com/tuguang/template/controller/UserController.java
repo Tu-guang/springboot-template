@@ -2,15 +2,18 @@ package com.tuguang.template.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tuguang.template.annotation.AuthCheck;
-import com.tuguang.template.exception.ThrowUtils;
-import com.tuguang.template.model.vo.LoginUserVO;
-import com.tuguang.template.common.*;
+import com.tuguang.template.common.BaseResponse;
+import com.tuguang.template.common.DeleteRequest;
+import com.tuguang.template.common.ErrorCode;
+import com.tuguang.template.common.ResultUtils;
 import com.tuguang.template.constant.UserConstant;
 import com.tuguang.template.exception.BusinessException;
+import com.tuguang.template.exception.ThrowUtils;
 import com.tuguang.template.model.dto.user.*;
+import com.tuguang.template.model.entity.User;
+import com.tuguang.template.model.vo.LoginUserVO;
 import com.tuguang.template.model.vo.UserVO;
 import com.tuguang.template.service.UserService;
-import com.tuguang.template.model.entity.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +33,6 @@ public class UserController {
 
     @Resource
     private UserService userService;
-
-    //    @Resource
 
     // region 登录相关
 

@@ -4,12 +4,17 @@ import com.tuguang.template.aop.AuthorizationInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @Configuration
+@Component
 public class InterceptorConfig extends WebMvcConfigurationSupport {
+
+    @Value("${upload.path}")
+    private String filePath;
 
     @Bean
     public AuthorizationInterceptor getAuthorizationInterceptor() {
@@ -23,6 +28,8 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(getAuthorizationInterceptor()).addPathPatterns("/**")
                 .excludePathPatterns("/user/login")
                 .excludePathPatterns("/user/register")
+                .excludePathPatterns("/file/upload")
+                .excludePathPatterns("/file/**")
                 .excludePathPatterns(excludePatterns);
         super.addInterceptors(registry);
     }
@@ -36,8 +43,8 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/file/**").addResourceLocations("file:" + filePath);
         super.addResourceHandlers(registry);
     }
-
 
 }
